@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hris/core/constants/constant_sizes.dart';
+import 'package:hris/core/themes/color_theme.dart';
 
 enum CustomButtonVariant { elevated, outlined, text }
 
@@ -20,8 +21,8 @@ class CustomButton extends StatelessWidget {
       return ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          foregroundColor: Colors.black,
-          backgroundColor: Color(0xFFF8B522),
+          foregroundColor: ColorTheme().black,
+          backgroundColor: ColorTheme().primary,
           minimumSize: Size(double.infinity, 56),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(ConstantSizes.defaultRadius),
@@ -38,10 +39,10 @@ class CustomButton extends StatelessWidget {
       return OutlinedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          foregroundColor: Color(0xFFF8B522),
+          foregroundColor: ColorTheme().primary,
           minimumSize: Size(double.infinity, 56),
           shape: RoundedRectangleBorder(
-            side: BorderSide(width: 0.5, color: Colors.grey),
+            side: BorderSide(width: 0.5, color: ColorTheme().grey),
             borderRadius: BorderRadius.circular(ConstantSizes.defaultRadius),
           ),
         ),
@@ -54,7 +55,7 @@ class CustomButton extends StatelessWidget {
 
     return TextButton(
       onPressed: onPressed,
-      child: Text(label, style: TextStyle(color: Color(0xffF8B522))),
+      child: Text(label, style: TextStyle(color: ColorTheme().primary)),
     );
   }
 }

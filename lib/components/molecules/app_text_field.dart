@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hris/components/atoms/text_body_medium.dart';
 import 'package:hris/core/constants/constant_sizes.dart';
+import 'package:hris/core/themes/color_theme.dart';
 
 class AppTextField extends StatelessWidget {
   final String label;
@@ -29,7 +30,11 @@ class AppTextField extends StatelessWidget {
       crossAxisAlignment: .start,
       spacing: 8,
       children: [
-        TextBodyMedium(textBodyMedium: label),
+        TextBodyMedium(
+          textBodyMedium: label,
+          color: ColorTheme().grey,
+          variant: FontWeight.normal,
+        ),
         TextFormField(
           obscureText: obsecuretext,
           readOnly: isReadOnly,
@@ -41,11 +46,11 @@ class AppTextField extends StatelessWidget {
             hintStyle: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.normal,
-              color: Color(0xFFB9B9B9),
+              color: ColorTheme().grey,
             ),
             suffixIcon: suffixIcon,
             filled: true,
-            fillColor: Color(0xFF161618),
+            fillColor: ColorTheme().black,
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(ConstantSizes.defaultRadius),
             ),
@@ -53,7 +58,7 @@ class AppTextField extends StatelessWidget {
               borderRadius: BorderRadius.circular(ConstantSizes.defaultRadius),
             ),
             errorBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.red, width: .5),
+              borderSide: BorderSide(color: ColorTheme().red, width: .5),
               borderRadius: BorderRadius.circular(ConstantSizes.defaultRadius),
             ),
           ),

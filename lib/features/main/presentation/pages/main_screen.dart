@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hris/core/themes/color_theme.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key, required this.navigationShell});
@@ -16,6 +17,8 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       body: widget.navigationShell,
       bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: ColorTheme().primary,
+        unselectedItemColor: ColorTheme().white,
         currentIndex: widget.navigationShell.currentIndex,
         onTap: (int index) => widget.navigationShell.goBranch(index),
         items: const <BottomNavigationBarItem>[

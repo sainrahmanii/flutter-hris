@@ -2,17 +2,20 @@ import 'package:flutter/material.dart';
 
 class TextBodyMedium extends StatelessWidget {
   final String textBodyMedium;
-  const TextBodyMedium({super.key, required this.textBodyMedium});
+  final Color color;
+  final FontWeight variant;
+  const TextBodyMedium({
+    super.key,
+    required this.textBodyMedium,
+    required this.color,
+    required this.variant,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Text(
       textBodyMedium,
-      style: TextStyle(
-        fontWeight: FontWeight.normal,
-        fontSize: 14,
-        color: Color(0xFFB9B9B9),
-      ),
+      style: TextStyle(fontWeight: variant, fontSize: 14, color: color),
     );
   }
 }

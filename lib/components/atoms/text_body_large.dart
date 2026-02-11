@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hris/core/themes/color_theme.dart';
 
 class TextBodyLarge extends StatelessWidget {
   final String textBodyLarge;
@@ -11,7 +12,7 @@ class TextBodyLarge extends StatelessWidget {
       style: TextStyle(
         fontWeight: FontWeight.normal,
         fontSize: 16,
-        color: Color(0xFFB9B9B9),
+        color: ColorTheme().grey,
       ),
     );
   }

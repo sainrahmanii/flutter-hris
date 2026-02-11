@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:hris/core/themes/color_theme.dart';
 
-class TextHeading1 extends StatelessWidget {
-  final String textHeading1;
-  const TextHeading1({super.key, required this.textHeading1});
+class TextHeading2 extends StatelessWidget {
+  final String textHeading2;
+  const TextHeading2({super.key, required this.textHeading2});
 
   @override
   Widget build(BuildContext context) {
     return Text(
-      textHeading1,
+      textHeading2,
       style: TextStyle(
-        fontWeight: FontWeight.w700,
-        fontSize: 32,
+        fontWeight: FontWeight.w600,
+        fontSize: 24,
         color: ColorTheme().white,
       ),
     );
