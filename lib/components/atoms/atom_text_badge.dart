@@ -3,20 +3,16 @@ import 'package:hris/components/atoms/atom_text.dart';
 import 'package:hris/core/constants/constant_sizes.dart';
 import 'package:hris/core/themes/color_theme.dart';
 
-enum MoleculesBadgeVariant { green, yellow, red }
+enum AtomBadgeVariant { green, yellow, red }
 
-class MoleculesTextBadge extends StatelessWidget {
-  final MoleculesBadgeVariant variant;
+class AtomTextBadge extends StatelessWidget {
+  final AtomBadgeVariant variant;
   final String label;
-  const MoleculesTextBadge({
-    super.key,
-    required this.variant,
-    required this.label,
-  });
+  const AtomTextBadge({super.key, required this.variant, required this.label});
 
   @override
   Widget build(BuildContext context) {
-    if (variant == MoleculesBadgeVariant.red) {
+    if (variant == AtomBadgeVariant.red) {
       return Container(
         padding: EdgeInsets.symmetric(horizontal: 8),
         decoration: BoxDecoration(
@@ -27,7 +23,7 @@ class MoleculesTextBadge extends StatelessWidget {
       );
     }
 
-    if (variant == MoleculesBadgeVariant.yellow) {
+    if (variant == AtomBadgeVariant.yellow) {
       return Container(
         padding: EdgeInsets.symmetric(horizontal: 8),
         decoration: BoxDecoration(

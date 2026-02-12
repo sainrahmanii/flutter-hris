@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 
-class MoleculesIconBadge extends StatelessWidget {
+class AtomIconBadge extends StatelessWidget {
   final IconData icon;
   final Color color;
-  const MoleculesIconBadge({
-    super.key,
-    required this.icon,
-    required this.color,
-  });
+  const AtomIconBadge({super.key, required this.icon, required this.color});
 
   @override
   Widget build(BuildContext context) {

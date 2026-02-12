@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hris/components/atoms/atom_text.dart';
-import 'package:hris/components/molecules/molecules_text_badge.dart';
+import 'package:hris/components/atoms/atom_text_badge.dart';
 import 'package:hris/core/themes/color_theme.dart';
 
 class HomeHeaderWidget extends StatelessWidget {
@@ -22,8 +22,8 @@ class HomeHeaderWidget extends StatelessWidget {
               ColorTheme().grey,
             ),
             AtomText.h2('Husain Rahmani', TextAlign.left),
-            MoleculesTextBadge(
-              variant: MoleculesBadgeVariant.yellow,
+            AtomTextBadge(
+              variant: AtomBadgeVariant.yellow,
               label: 'Mobile Developer',
             ),
           ],

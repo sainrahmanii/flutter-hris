@@ -3,7 +3,7 @@ import 'package:hris/components/atoms/atom_text.dart';
 import 'package:hris/components/atoms/atom_button.dart';
 import 'package:hris/components/atoms/atom_card.dart';
 import 'package:hris/components/molecules/molecules_icon_text.dart';
-import 'package:hris/components/molecules/molecules_text_badge.dart';
+import 'package:hris/components/atoms/atom_text_badge.dart';
 import 'package:hris/core/themes/color_theme.dart';
 
 class HomeStatusAttendanceWidget extends StatelessWidget {
@@ -24,8 +24,8 @@ class HomeStatusAttendanceWidget extends StatelessWidget {
                 TextAlign.left,
                 ColorTheme().white,
               ),
-              MoleculesTextBadge(
-                variant: MoleculesBadgeVariant.yellow,
+              AtomTextBadge(
+                variant: AtomBadgeVariant.yellow,
                 label: 'SUDAH CHECK-IN',
               ),
             ],

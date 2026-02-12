@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hris/components/atoms/atom_text.dart';
 import 'package:hris/components/atoms/atom_card.dart';
-import 'package:hris/components/molecules/molecules_icon_badge.dart';
+import 'package:hris/components/atoms/atom_icon_badge.dart';
 import 'package:hris/core/themes/color_theme.dart';
 
 class HomeCardLocationWidget extends StatelessWidget {
@@ -14,7 +14,7 @@ class HomeCardLocationWidget extends StatelessWidget {
       smallPadding: false,
       child: Row(
         children: [
-          MoleculesIconBadge(
+          AtomIconBadge(
             icon: CupertinoIcons.paperplane_fill,
             color: ColorTheme().primary,
           ),
