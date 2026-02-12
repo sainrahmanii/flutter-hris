@@ -1,48 +1,43 @@
 import 'package:flutter/material.dart';
+import 'package:hris/components/atoms/atom_text.dart';
 import 'package:hris/core/constants/constant_sizes.dart';
 import 'package:hris/core/themes/color_theme.dart';
 
-enum AppBadgeVariant { green, yellow, red }
+enum MoleculesBadgeVariant { green, yellow, red }
 
-class AppTextBadge extends StatelessWidget {
-  final AppBadgeVariant variant;
+class MoleculesTextBadge extends StatelessWidget {
+  final MoleculesBadgeVariant variant;
   final String label;
-  const AppTextBadge({super.key, required this.variant, required this.label});
+  const MoleculesTextBadge({
+    super.key,
+    required this.variant,
+    required this.label,
+  });
 
   @override
   Widget build(BuildContext context) {
-    if (variant == AppBadgeVariant.red) {
+    if (variant == MoleculesBadgeVariant.red) {
       return Container(
         padding: EdgeInsets.symmetric(horizontal: 8),
         decoration: BoxDecoration(
           color: ColorTheme().red.withValues(alpha: 0.20),
           borderRadius: BorderRadius.circular(99),
         ),
-        child: Text(
-          label,
-          style: TextStyle(
-            color: ColorTheme().red,
-            fontSize: 12,
-            fontWeight: FontWeight.w400,
-          ),
-        ),
+        child: AtomText.bodySmall(label, TextAlign.center, ColorTheme().red),
       );
     }
 
-    if (variant == AppBadgeVariant.yellow) {
+    if (variant == MoleculesBadgeVariant.yellow) {
       return Container(
         padding: EdgeInsets.symmetric(horizontal: 8),
         decoration: BoxDecoration(
           color: ColorTheme().primary.withValues(alpha: 0.20),
           borderRadius: BorderRadius.circular(ConstantSizes.defaultRadius),
         ),
-        child: Text(
+        child: AtomText.bodySmall(
           label,
-          style: TextStyle(
-            color: ColorTheme().primary,
-            fontSize: 12,
-            fontWeight: FontWeight.w400,
-          ),
+          TextAlign.center,
+          ColorTheme().primary,
         ),
       );
     }
@@ -53,14 +48,7 @@ class AppTextBadge extends StatelessWidget {
         color: ColorTheme().green.withValues(alpha: 0.20),
         borderRadius: BorderRadius.circular(99),
       ),
-      child: Text(
-        label,
-        style: TextStyle(
-          color: ColorTheme().green,
-          fontSize: 12,
-          fontWeight: FontWeight.w400,
-        ),
-      ),
+      child: AtomText.bodySmall(label, TextAlign.center, ColorTheme().green),
     );
   }
 }

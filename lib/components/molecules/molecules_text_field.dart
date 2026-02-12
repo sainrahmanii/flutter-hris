@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:hris/components/atoms/text_body_medium.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:hris/components/atoms/atom_text.dart';
 import 'package:hris/core/constants/constant_sizes.dart';
 import 'package:hris/core/themes/color_theme.dart';
 
-class AppTextField extends StatelessWidget {
+class MoleculesTextField extends StatelessWidget {
   final String label;
   final String hint;
   final bool obsecuretext;
@@ -12,7 +13,7 @@ class AppTextField extends StatelessWidget {
   final Widget? suffixIcon;
   final bool isReadOnly;
   final TextInputAction textInputAction;
-  const AppTextField({
+  const MoleculesTextField({
     super.key,
     required this.label,
     required this.hint,
@@ -30,11 +31,7 @@ class AppTextField extends StatelessWidget {
       crossAxisAlignment: .start,
       spacing: 8,
       children: [
-        TextBodyMedium(
-          textBodyMedium: label,
-          color: ColorTheme().grey,
-          variant: FontWeight.normal,
-        ),
+        AtomText.bodyMedium(label, TextAlign.left, ColorTheme().grey),
         TextFormField(
           obscureText: obsecuretext,
           readOnly: isReadOnly,
@@ -43,7 +40,7 @@ class AppTextField extends StatelessWidget {
           keyboardType: textInputType,
           decoration: InputDecoration(
             hintText: hint,
-            hintStyle: TextStyle(
+            hintStyle: GoogleFonts.plusJakartaSans(
               fontSize: 14,
               fontWeight: FontWeight.normal,
               color: ColorTheme().grey,

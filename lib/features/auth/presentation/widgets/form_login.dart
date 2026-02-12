@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hris/components/atoms/custom_button.dart';
-import 'package:hris/components/atoms/text_body_large.dart';
-import 'package:hris/components/atoms/text_heading_1.dart';
-import 'package:hris/components/molecules/app_text_field.dart';
+import 'package:hris/components/atoms/atom_text.dart';
+import 'package:hris/components/atoms/atom_button.dart';
+import 'package:hris/components/molecules/molecules_text_field.dart';
+import 'package:hris/core/themes/color_theme.dart';
 
 class FormLogin extends StatefulWidget {
   final TextEditingController emailController;
@@ -29,14 +29,14 @@ class _FormLoginState extends State<FormLogin> {
       mainAxisAlignment: .center,
       crossAxisAlignment: .start,
       children: [
-        TextHeading1(textHeading1: 'Welcome Back'),
+        AtomText.h1('Welcome Back', TextAlign.left),
         const SizedBox(height: 16),
-        TextBodyLarge(
-          textBodyLarge:
-              'Sign in to access your dashboard and \ncontinue tracking your attendance efficiently',
+        AtomText.bodyLarge(
+          'Sign in to access your dashboard and \ncontinue tracking your attendance efficiently',
+          TextAlign.left,
         ),
         const SizedBox(height: 40),
-        AppTextField(
+        MoleculesTextField(
           label: 'Email Address',
           hint: 'Enter Your Email Address',
           obsecuretext: false,
@@ -46,7 +46,7 @@ class _FormLoginState extends State<FormLogin> {
           textInputAction: TextInputAction.next,
         ),
         const SizedBox(height: 16),
-        AppTextField(
+        MoleculesTextField(
           label: 'Password',
           hint: 'Enter Your Password',
           obsecuretext: _isObsecureText,
@@ -68,19 +68,23 @@ class _FormLoginState extends State<FormLogin> {
           ),
         ),
         const SizedBox(height: 16),
-        CustomButton(
+        AtomButton(
           label: 'Login',
-          variant: CustomButtonVariant.elevated,
+          variant: AtomButtonVariant.elevated,
           onPressed: widget.onLoginPressed,
         ),
         const SizedBox(height: 16),
         Row(
           mainAxisAlignment: .center,
           children: [
-            Text("Don't have an account?"),
-            CustomButton(
+            AtomText.bodyLargeBold(
+              "Don't have an account?",
+              TextAlign.center,
+              ColorTheme().white,
+            ),
+            AtomButton(
               label: 'Register',
-              variant: CustomButtonVariant.text,
+              variant: AtomButtonVariant.text,
               onPressed: widget.onRegisterPressed,
             ),
           ],

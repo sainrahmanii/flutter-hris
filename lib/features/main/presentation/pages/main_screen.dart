@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hris/core/themes/color_theme.dart';
 
 class MainScreen extends StatefulWidget {
@@ -19,6 +20,8 @@ class _MainScreenState extends State<MainScreen> {
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: ColorTheme().primary,
         unselectedItemColor: ColorTheme().white,
+        selectedLabelStyle: GoogleFonts.plusJakartaSans(),
+        unselectedLabelStyle: GoogleFonts.plusJakartaSans(),
         currentIndex: widget.navigationShell.currentIndex,
         onTap: (int index) => widget.navigationShell.goBranch(index),
         items: const <BottomNavigationBarItem>[

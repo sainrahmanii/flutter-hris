@@ -2,14 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:hris/core/constants/constant_sizes.dart';
 import 'package:hris/core/themes/color_theme.dart';
 
-class CustomCard extends StatelessWidget {
+class AtomCard extends StatelessWidget {
   final bool smallPadding;
   final Widget child;
-  const CustomCard({
-    super.key,
-    required this.smallPadding,
-    required this.child,
-  });
+  const AtomCard({super.key, required this.smallPadding, required this.child});
 
   @override
   Widget build(BuildContext context) {

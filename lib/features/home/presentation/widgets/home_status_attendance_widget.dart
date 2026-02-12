@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:hris/components/atoms/custom_button.dart';
-import 'package:hris/components/atoms/custom_card.dart';
-import 'package:hris/components/atoms/text_body_medium.dart';
-import 'package:hris/components/atoms/text_body_small.dart';
-import 'package:hris/components/atoms/text_heading_2.dart';
-import 'package:hris/components/molecules/app_icon_text.dart';
-import 'package:hris/components/molecules/app_text_badge.dart';
+import 'package:hris/components/atoms/atom_text.dart';
+import 'package:hris/components/atoms/atom_button.dart';
+import 'package:hris/components/atoms/atom_card.dart';
+import 'package:hris/components/molecules/molecules_icon_text.dart';
+import 'package:hris/components/molecules/molecules_text_badge.dart';
 import 'package:hris/core/themes/color_theme.dart';
 
 class HomeStatusAttendanceWidget extends StatelessWidget {
@@ -13,7 +11,7 @@ class HomeStatusAttendanceWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomCard(
+    return AtomCard(
       smallPadding: false,
       child: Column(
         spacing: 16,
@@ -21,13 +19,13 @@ class HomeStatusAttendanceWidget extends StatelessWidget {
           Row(
             mainAxisAlignment: .spaceBetween,
             children: [
-              TextBodyMedium(
-                textBodyMedium: 'Status Absensi',
-                color: ColorTheme().white,
-                variant: FontWeight.bold,
+              AtomText.bodyLargeBold(
+                'Status Absensi',
+                TextAlign.left,
+                ColorTheme().white,
               ),
-              AppTextBadge(
-                variant: AppBadgeVariant.yellow,
+              MoleculesTextBadge(
+                variant: MoleculesBadgeVariant.yellow,
                 label: 'SUDAH CHECK-IN',
               ),
             ],
@@ -40,12 +38,15 @@ class HomeStatusAttendanceWidget extends StatelessWidget {
                 crossAxisAlignment: .start,
                 spacing: 8,
                 children: [
-                  AppIconText(icon: Icons.login_rounded, label: 'JAM MASUK'),
-                  TextHeading2(textHeading2: '08:00'),
-                  TextBodySmall(
-                    textBodySmall: 'Tepat Waktu',
-                    color: ColorTheme().grey,
-                    center: false,
+                  MoleculesIconText(
+                    icon: Icons.login_rounded,
+                    label: 'JAM MASUK',
+                  ),
+                  AtomText.h2('08:00', TextAlign.left),
+                  AtomText.bodySmall(
+                    'Tepat Waktu',
+                    TextAlign.left,
+                    ColorTheme().grey,
                   ),
                 ],
               ),
@@ -53,27 +54,29 @@ class HomeStatusAttendanceWidget extends StatelessWidget {
                 crossAxisAlignment: .end,
                 spacing: 8,
                 children: [
-                  AppIconText(icon: Icons.login_rounded, label: 'JAM PULANG'),
-                  TextHeading2(textHeading2: '--:--'),
-                  TextBodySmall(
-                    textBodySmall: 'Belum Absen',
-                    color: ColorTheme().grey,
-                    center: false,
+                  MoleculesIconText(
+                    icon: Icons.login_rounded,
+                    label: 'JAM PULANG',
+                  ),
+                  AtomText.h2('--:--', TextAlign.left),
+                  AtomText.bodySmall(
+                    'Belum Absen',
+                    TextAlign.left,
+                    ColorTheme().grey,
                   ),
                 ],
               ),
             ],
           ),
-          CustomButton(
+          AtomButton(
             label: 'Check Out Sekarang',
-            variant: CustomButtonVariant.elevated,
+            variant: AtomButtonVariant.elevated,
             onPressed: () {},
           ),
-          TextBodySmall(
-            textBodySmall:
-                'Pastikan Anda berada di area kantor sebelum melakukan absensi',
-            color: ColorTheme().white,
-            center: true,
+          AtomText.bodySmall(
+            'Pastikan Anda berada di area kantor sebelum melakukan absensi',
+            TextAlign.center,
+            ColorTheme().white,
           ),
         ],
       ),

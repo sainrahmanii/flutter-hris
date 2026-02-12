@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hris/components/atoms/text_body_medium.dart';
-import 'package:hris/components/atoms/text_body_small.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:hris/components/atoms/atom_text.dart';
 import 'package:hris/core/themes/color_theme.dart';
 
 class HomeLiveTimeWidget extends StatelessWidget {
@@ -22,29 +22,32 @@ class HomeLiveTimeWidget extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
               ),
             ),
-            TextBodySmall(
-              textBodySmall: 'LIVE TIME',
-              color: ColorTheme().primary,
-              center: false,
+            AtomText.bodySmall(
+              'LIVE TIME',
+              TextAlign.center,
+              ColorTheme().primary,
             ),
           ],
         ),
         Text.rich(
           TextSpan(
-            style: TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
+            style: GoogleFonts.plusJakartaSans(
+              fontSize: 48,
+              fontWeight: FontWeight.bold,
+            ),
             children: [
               TextSpan(text: '11:22'),
               TextSpan(
                 text: ':23',
-                style: TextStyle(color: ColorTheme().primary),
+                style: GoogleFonts.plusJakartaSans(color: ColorTheme().primary),
               ),
             ],
           ),
         ),
-        TextBodyMedium(
-          textBodyMedium: 'Rabu, 11 Februari 2026',
-          variant: FontWeight.normal,
-          color: ColorTheme().white,
+        AtomText.bodyMedium(
+          'Rabu, 11 Februari 2026',
+          TextAlign.center,
+          ColorTheme().white,
         ),
       ],
     );

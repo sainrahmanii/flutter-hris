@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:hris/components/atoms/atom_text.dart';
 import 'package:hris/core/constants/constant_sizes.dart';
 import 'package:hris/core/themes/color_theme.dart';
 
-enum CustomButtonVariant { elevated, outlined, text }
+enum AtomButtonVariant { elevated, outlined, text }
 
-class CustomButton extends StatelessWidget {
+class AtomButton extends StatelessWidget {
   final String label;
-  final CustomButtonVariant variant;
+  final AtomButtonVariant variant;
   final VoidCallback onPressed;
-  const CustomButton({
+  const AtomButton({
     super.key,
     required this.label,
     required this.variant,
@@ -17,7 +18,7 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (variant == CustomButtonVariant.elevated) {
+    if (variant == AtomButtonVariant.elevated) {
       return ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
@@ -28,14 +29,15 @@ class CustomButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(ConstantSizes.defaultRadius),
           ),
         ),
-        child: Text(
+        child: AtomText.bodyLargeBold(
           label,
-          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          TextAlign.center,
+          ColorTheme().black,
         ),
       );
     }
 
-    if (variant == CustomButtonVariant.outlined) {
+    if (variant == AtomButtonVariant.outlined) {
       return OutlinedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
@@ -46,16 +48,21 @@ class CustomButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(ConstantSizes.defaultRadius),
           ),
         ),
-        child: Text(
+        child: AtomText.bodyLargeBold(
           label,
-          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          TextAlign.center,
+          ColorTheme().primary,
         ),
       );
     }
 
     return TextButton(
       onPressed: onPressed,
-      child: Text(label, style: TextStyle(color: ColorTheme().primary)),
+      child: AtomText.bodyLargeBold(
+        label,
+        TextAlign.center,
+        ColorTheme().primary,
+      ),
     );
   }
 }

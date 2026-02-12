@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hris/components/atoms/text_heading_2.dart';
-import 'package:hris/components/molecules/app_text_badge.dart';
+import 'package:hris/components/atoms/atom_text.dart';
+import 'package:hris/components/molecules/molecules_text_badge.dart';
 import 'package:hris/core/themes/color_theme.dart';
 
 class HomeHeaderWidget extends StatelessWidget {
@@ -16,10 +16,14 @@ class HomeHeaderWidget extends StatelessWidget {
           crossAxisAlignment: .start,
           spacing: 2,
           children: [
-            Text('Selamat Pagi,', style: TextStyle(color: ColorTheme().grey)),
-            TextHeading2(textHeading2: 'Husain Rahmani'),
-            AppTextBadge(
-              variant: AppBadgeVariant.yellow,
+            AtomText.bodyMedium(
+              'Selamat Pagi,',
+              TextAlign.left,
+              ColorTheme().grey,
+            ),
+            AtomText.h2('Husain Rahmani', TextAlign.left),
+            MoleculesTextBadge(
+              variant: MoleculesBadgeVariant.yellow,
               label: 'Mobile Developer',
             ),
           ],

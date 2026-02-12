@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:hris/components/atoms/text_body_small.dart';
+import 'package:hris/components/atoms/atom_text.dart';
 import 'package:hris/core/themes/color_theme.dart';
 
-class AppIconText extends StatelessWidget {
+class MoleculesIconText extends StatelessWidget {
   final IconData icon;
   final String label;
-  const AppIconText({super.key, required this.icon, required this.label});
+  const MoleculesIconText({super.key, required this.icon, required this.label});
 
   @override
   Widget build(BuildContext context) {
@@ -13,11 +13,7 @@ class AppIconText extends StatelessWidget {
       spacing: 8,
       children: [
         Icon(icon, color: ColorTheme().grey, size: 20),
-        TextBodySmall(
-          textBodySmall: label,
-          color: ColorTheme().grey,
-          center: false,
-        ),
+        AtomText.bodySmall(label, TextAlign.center, ColorTheme().grey),
       ],
     );
   }

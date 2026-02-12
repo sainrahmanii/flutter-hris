@@ -15,16 +15,22 @@ class _LoginScreenState extends State<LoginScreen> with LoginCubit {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: FormLogin(
-            emailController: emailController,
-            passwordController: passwordController,
-            onLoginPressed: () => onLoginPressed(context),
-            onRegisterPressed: () => onRegisterPressed(context),
-          ),
-        ),
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          return SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              constraints: BoxConstraints(minHeight: constraints.maxHeight),
+              child: FormLogin(
+                emailController: emailController,
+                passwordController: passwordController,
+                onLoginPressed: () => onLoginPressed(context),
+                onRegisterPressed: () => onRegisterPressed(context),
+              ),
+            ),
+          );
+        },
       ),
     );
   }

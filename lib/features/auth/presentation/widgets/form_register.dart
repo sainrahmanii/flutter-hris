@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hris/components/atoms/custom_button.dart';
-import 'package:hris/components/atoms/text_body_large.dart';
-import 'package:hris/components/atoms/text_heading_1.dart';
-import 'package:hris/components/molecules/app_text_field.dart';
+import 'package:hris/components/atoms/atom_text.dart';
+import 'package:hris/components/atoms/atom_button.dart';
+import 'package:hris/components/molecules/molecules_text_field.dart';
+import 'package:hris/core/themes/color_theme.dart';
 
 class FormRegister extends StatefulWidget {
   final TextEditingController fullNameController;
@@ -39,13 +39,15 @@ class _FormRegisterState extends State<FormRegister> {
         mainAxisAlignment: .center,
         crossAxisAlignment: .start,
         children: [
-          TextHeading1(textHeading1: 'Create Account'),
+          AtomText.h1('Create Account', TextAlign.left),
           const SizedBox(height: 16),
-          TextBodyLarge(
-            textBodyLarge: 'Please fill in the details below to register',
+          AtomText.bodyLargeBold(
+            'Please fill in the details below to register',
+            TextAlign.left,
+            ColorTheme().grey,
           ),
           const SizedBox(height: 22),
-          AppTextField(
+          MoleculesTextField(
             label: 'Full Name',
             hint: 'Enter your full name',
             obsecuretext: false,
@@ -55,7 +57,7 @@ class _FormRegisterState extends State<FormRegister> {
             textInputAction: TextInputAction.next,
           ),
           const SizedBox(height: 16),
-          AppTextField(
+          MoleculesTextField(
             label: 'Email Address',
             hint: 'Enter your email address',
             obsecuretext: false,
@@ -65,7 +67,7 @@ class _FormRegisterState extends State<FormRegister> {
             textInputAction: TextInputAction.next,
           ),
           const SizedBox(height: 16),
-          AppTextField(
+          MoleculesTextField(
             label: 'Company',
             hint: 'Select your company',
             obsecuretext: false,
@@ -76,7 +78,7 @@ class _FormRegisterState extends State<FormRegister> {
             textInputAction: TextInputAction.next,
           ),
           const SizedBox(height: 16),
-          AppTextField(
+          MoleculesTextField(
             label: 'NIP',
             hint: 'Enter your NIP',
             obsecuretext: false,
@@ -86,7 +88,7 @@ class _FormRegisterState extends State<FormRegister> {
             textInputAction: TextInputAction.next,
           ),
           const SizedBox(height: 16),
-          AppTextField(
+          MoleculesTextField(
             label: 'Division',
             hint: 'Enter your division',
             obsecuretext: false,
@@ -96,7 +98,7 @@ class _FormRegisterState extends State<FormRegister> {
             textInputAction: TextInputAction.next,
           ),
           const SizedBox(height: 16),
-          AppTextField(
+          MoleculesTextField(
             label: 'Password',
             hint: 'Enter Your Password',
             obsecuretext: _isObsecureText,
@@ -118,19 +120,23 @@ class _FormRegisterState extends State<FormRegister> {
             ),
           ),
           const SizedBox(height: 16),
-          CustomButton(
+          AtomButton(
             label: 'Register',
-            variant: CustomButtonVariant.elevated,
+            variant: AtomButtonVariant.elevated,
             onPressed: widget.onRegisterPressed,
           ),
           const SizedBox(height: 16),
           Row(
             mainAxisAlignment: .center,
             children: [
-              Text("Already have account?"),
-              CustomButton(
+              AtomText.bodyLargeBold(
+                'Already have account?',
+                TextAlign.center,
+                ColorTheme().white,
+              ),
+              AtomButton(
                 label: 'Login',
-                variant: CustomButtonVariant.text,
+                variant: AtomButtonVariant.text,
                 onPressed: widget.onLoginPressed,
               ),
             ],

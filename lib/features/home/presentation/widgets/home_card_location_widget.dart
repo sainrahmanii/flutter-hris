@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hris/components/atoms/custom_card.dart';
-import 'package:hris/components/atoms/text_body_small.dart';
-import 'package:hris/components/molecules/app_icon_badge.dart';
+import 'package:hris/components/atoms/atom_text.dart';
+import 'package:hris/components/atoms/atom_card.dart';
+import 'package:hris/components/molecules/molecules_icon_badge.dart';
 import 'package:hris/core/themes/color_theme.dart';
 
 class HomeCardLocationWidget extends StatelessWidget {
@@ -10,11 +10,11 @@ class HomeCardLocationWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomCard(
+    return AtomCard(
       smallPadding: false,
       child: Row(
         children: [
-          AppIconBadge(
+          MoleculesIconBadge(
             icon: CupertinoIcons.paperplane_fill,
             color: ColorTheme().primary,
           ),
@@ -22,15 +22,15 @@ class HomeCardLocationWidget extends StatelessWidget {
           Column(
             crossAxisAlignment: .start,
             children: [
-              TextBodySmall(
-                textBodySmall: 'LOKASI SAAT INI',
-                color: ColorTheme().grey,
-                center: false,
+              AtomText.bodySmall(
+                'LOKASI SAAT INI',
+                TextAlign.left,
+                ColorTheme().grey,
               ),
-              TextBodySmall(
-                textBodySmall: 'Sentul, Kab. Bogor',
-                color: ColorTheme().white,
-                center: false,
+              AtomText.bodySmall(
+                'Sentul, Kab. Bogor',
+                TextAlign.left,
+                ColorTheme().white,
               ),
             ],
           ),
