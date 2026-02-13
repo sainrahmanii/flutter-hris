@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hris/components/atoms/atom_horizontal_devider.dart';
 import 'package:hris/components/atoms/atom_text.dart';
 import 'package:hris/components/atoms/atom_button.dart';
 import 'package:hris/components/atoms/atom_card.dart';
@@ -50,6 +51,7 @@ class HomeStatusAttendanceWidget extends StatelessWidget {
                   ),
                 ],
               ),
+              AtomHorizontalDevider(height: 84),
               Column(
                 crossAxisAlignment: .end,
                 spacing: 8,
@@ -71,6 +73,8 @@ class HomeStatusAttendanceWidget extends StatelessWidget {
           AtomButton(
             label: 'Check Out Sekarang',
             variant: AtomButtonVariant.elevated,
+            foregroundColor: ColorTheme().black,
+            backgroundColor: ColorTheme().primary,
             onPressed: () {},
           ),
           AtomText.bodySmall(

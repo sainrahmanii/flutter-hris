@@ -71,6 +71,8 @@ class _FormLoginState extends State<FormLogin> {
         AtomButton(
           label: 'Login',
           variant: AtomButtonVariant.elevated,
+          foregroundColor: ColorTheme().black,
+          backgroundColor: ColorTheme().primary,
           onPressed: widget.onLoginPressed,
         ),
         const SizedBox(height: 16),

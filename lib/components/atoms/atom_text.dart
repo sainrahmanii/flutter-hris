@@ -6,11 +6,7 @@ class AtomText extends StatelessWidget {
   final String text;
   final TextStyle style;
   final TextAlign? textAlign;
-  const AtomText._({
-    required this.text,
-    required this.style,
-    required this.textAlign,
-  });
+  const AtomText._({required this.text, required this.style, this.textAlign});
 
   factory AtomText.displayLarge(
     String text,

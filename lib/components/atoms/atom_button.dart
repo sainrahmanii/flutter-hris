@@ -8,12 +8,18 @@ enum AtomButtonVariant { elevated, outlined, text }
 class AtomButton extends StatelessWidget {
   final String label;
   final AtomButtonVariant variant;
+  final Color? foregroundColor;
+  final Color? backgroundColor;
   final VoidCallback onPressed;
+  final Color? borderColor;
   const AtomButton({
     super.key,
     required this.label,
     required this.variant,
     required this.onPressed,
+    this.foregroundColor,
+    this.backgroundColor,
+    this.borderColor,
   });
 
   @override
@@ -22,8 +28,8 @@ class AtomButton extends StatelessWidget {
       return ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          foregroundColor: ColorTheme().black,
-          backgroundColor: ColorTheme().primary,
+          foregroundColor: foregroundColor,
+          backgroundColor: backgroundColor,
           minimumSize: Size(double.infinity, 56),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(ConstantSizes.defaultRadius),
@@ -41,18 +47,18 @@ class AtomButton extends StatelessWidget {
       return OutlinedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          foregroundColor: ColorTheme().primary,
+          foregroundColor: foregroundColor,
+          backgroundColor: backgroundColor,
           minimumSize: Size(double.infinity, 56),
+          side: BorderSide(
+            width: 0.5,
+            color: borderColor ?? ColorTheme().primary,
+          ),
           shape: RoundedRectangleBorder(
-            side: BorderSide(width: 0.5, color: ColorTheme().grey),
             borderRadius: BorderRadius.circular(ConstantSizes.defaultRadius),
           ),
         ),
-        child: AtomText.bodyLargeBold(
-          label,
-          TextAlign.center,
-          ColorTheme().primary,
-        ),
+        child: AtomText.bodyLargeBold(label, TextAlign.center, foregroundColor),
       );
     }
 

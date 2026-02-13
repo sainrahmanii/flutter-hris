@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hris/components/organism/organism_app_bar.dart';
 import 'package:hris/core/constants/constant_sizes.dart';
 import 'package:hris/features/auth/cubit/register_cubit.dart';
 import 'package:hris/features/auth/presentation/widgets/form_register.dart';
@@ -20,21 +21,31 @@ class _RegisterScreenState extends State<RegisterScreen> with RegisterCubit {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Register"), backgroundColor: Colors.black),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(kTextTabBarHeight),
+        child: OrganismAppBar(text: 'Register'),
+      ),
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(
             horizontal: ConstantSizes.defaultPadding,
           ),
-          child: FormRegister(
-            emailController: emailController,
-            passwordController: passwordController,
-            onLoginPressed: () => onLoginPressed(context),
-            onRegisterPressed: () => onRegisterPressed(context),
-            fullNameController: fullNameController,
-            companyController: companyController,
-            nipController: nipController,
-            divisionController: divisionController,
+          child: SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: Column(
+              children: [
+                FormRegister(
+                  emailController: emailController,
+                  passwordController: passwordController,
+                  onLoginPressed: () => onLoginPressed(context),
+                  onRegisterPressed: () => onRegisterPressed(context),
+                  fullNameController: fullNameController,
+                  companyController: companyController,
+                  nipController: nipController,
+                  divisionController: divisionController,
+                ),
+              ],
+            ),
           ),
         ),
       ),

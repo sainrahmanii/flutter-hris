@@ -123,6 +123,8 @@ class _FormRegisterState extends State<FormRegister> {
           AtomButton(
             label: 'Register',
             variant: AtomButtonVariant.elevated,
+            foregroundColor: ColorTheme().black,
+            backgroundColor: ColorTheme().primary,
             onPressed: widget.onRegisterPressed,
           ),
           const SizedBox(height: 16),
